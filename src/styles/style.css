@@ -1,0 +1,522 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 1000px;
+}
+
+/*
+   Navbar
+  */
+
+.app-bar {
+  padding: 8px 16px;
+  background-color: #4D637C;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 22px;
+  user-select: text;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.app-bar .app-bar__brand.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  color: #ffffff;
+  display: block;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+  color: #DBECF9;
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+/*
+    Main Content
+  */
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.contents {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+#contents {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+
+
+/*
+   jumbotron
+  */
+.container-fluid {
+  width: 100%;
+}
+
+.jumbotron {
+  background-position: center;
+  background-size: cover;
+  height: 650px;
+  position: relative;
+  margin-bottom: 50px;
+
+}
+
+.jumbotron::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(to top, rgb(110, 103, 103), rgba(0, 0, 0, 0)); */
+  position: absolute;
+  bottom: 0;
+}
+
+.jumbotron p {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 4%;
+  color: rgb(255, 255, 255);
+  font-size: 2.5em;
+  text-align: center;
+  padding: 200px 0 300px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  position: relative;
+}
+
+.jumbotron ul li {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center
+}
+
+/* store */
+
+.movies {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 27px;
+  margin: 32px 0;
+  margin-left: 2.5%;
+  width: 95%;
+}
+
+.movie-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-item__header {
+  position: relative;
+}
+
+.movie-item .movie-item__header .movie-item__header__poster {
+  width: 100%;
+}
+
+.movie-item .movie-item__header .movie-item__header__posters {
+  width: 100%;
+  height: 210px;
+}
+
+.movie-item .movie-item__content {
+  padding: 16px;
+}
+
+.movie-item .movie-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.movie-item .movie-item__content h3 a {
+  font-size: 32px;
+  color: #4D637C;
+  text-decoration: none;
+}
+
+.movie-item .movie-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.movie {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.movie .movie__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.movie .movie__info h4 {
+  margin: 8px 0;
+}
+
+/* 
+title
+*/
+
+.hero__inner {
+  text-align: center;
+  max-width: 100%;
+  flex-direction: column;
+}
+
+/* 
+about us 
+*/
+.about{
+  background-color: #DBECF9;
+}
+.about .about_inner{
+  text-align: center;
+  max-width: 100%;
+  flex-direction: column;
+}
+.about .about_judul{
+  margin-top: 5%;
+}
+.logo{
+  max-width: 100%;
+}
+.logo img{
+  height: 300px; 
+  float: left; 
+  margin-left: 20%; 
+  margin-bottom: 9%; 
+  margin-top: 9%;
+}
+.about p{
+  margin-bottom: 10%; 
+  margin-top: 15%; 
+  margin-right: 30%;
+}
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  padding: 8px;
+  background-color: #bf1722;
+  color: white;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+a {
+  font-size: 22px;
+}
+
+#hamburgerButton {
+  font-size: 32px;
+}
+
+/* 
+Review 
+*/
+
+.detail-review {
+  max-width: 100%;
+  font-size: 1em;
+  text-align: center;
+}
+
+.detail-review-item {
+  color: var(--font-color);
+  background-color: #DBECF9;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  padding: 1em 1em;
+}
+
+.detail-review-item:last-child {
+  margin-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em;
+  color: var(--btn);
+  border-bottom: 1px solid var(--font-color);
+}
+
+.review-name {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.review-date {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+
+.review-body {
+  padding: 1em;
+  text-align: left;
+}
+
+.category:hover,
+.detail-review-item:hover {
+  box-shadow: 0px 10px 13px -7px var(--secondary-color),
+    5px 5px 15px 5px var(--secondary-color);
+}
+
+.movie .movie__info h4 {
+  margin: 8px 0;
+}
+
+.movietxt {
+  font-size: 33px;
+}
+
+/*
+  Like
+*/
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FA8576;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+}
+
+.like i {
+  color: #760E2E;
+  font-weight: bolder;
+}
+
+/*
+  Footer
+*/
+
+.batas {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.kotak {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #4D637C;
+  padding: 70px 0;
+}
+
+.footer-kol {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-kol img{
+  max-width: 100%;
+}
+.footer-kol h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-kol h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #ffffff;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-kol ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-kol ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #DBECF9;
+  text-decoration: none;
+  font-weight: 300;
+  color: #DBECF9;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-kol ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-bawah {
+  margin-top: 1%;
+  background: #4D637C;
+  width: 100vw;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bawah p {
+  color: #ffffff;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bawah span {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+
+@media(max-width: 767px) {
+  .footer-kol {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .logo img{
+    height: 200px; 
+    margin-left: 20%; 
+    margin-bottom: 9%; 
+    margin-top: 9%;
+  }
+  .about p{
+    margin-bottom: 10%; 
+    margin-top: 15%; 
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+  .app-bar .app-bar__navigation ul li a {
+    font-size: 17px;
+  }
+}
+
+@media(max-width: 574px) {
+  .footer-kol {
+    width: 100%;
+  }
+  .logo img{
+    height: 200px; 
+    margin-left: 30%; 
+    margin-bottom: 9%; 
+    margin-top: 9%;
+  }
+  .about p{
+    margin-bottom: 10%; 
+    margin-right: 25%;
+    margin-left: 30%;
+  }
+  .app-bar .app-bar__navigation ul li a {
+    font-size: 16px;
+  }
+}
